@@ -20,6 +20,10 @@ public class PricePredictionController {
 	@Autowired
 	private UserService userService;
 	
+	@GetMapping({"/" , "/home"})
+	public String homePage() {
+		return "home";
+	}
 	
 	@GetMapping("/registerPage") // getFrom page
 	public String registerUser(Model model) {

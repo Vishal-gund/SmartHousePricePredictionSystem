@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Property Prediction</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+   <div class="heading">
+		 <img src="images/logo2.png" alt="House Prediction Logo" class="logo">
+		<h1 class="main-heading">Smart Property Price Prediction System</h1>
+		
+   </div>
+   
+    <div>
+        <a th:href="@{/home}">Home</a>
+        <a th:href="@{/userLogin}">Login</a>
+        <a th:href="@{/registerPage}">Register</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Smart Property Price Prediction</h1>
+        <p>Make smarter real estate decisions using data-driven insights.</p>
+
+        <!-- Dynamic Buttons -->
+        <div>
+            <a th:href="@{/registerPage}" class="btn">Get Started</a>
+            <a th:href="@{/userLogin}" class="btn-outline">Login</a>
+        </div>
+
+       
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+    <h2>Key Features</h2>
+    <div class="cards">
+        <div class="card">📊 Accurate Predictions</div>
+        <div class="card">🔐 Secure System</div>
+        <div class="card">🏙️ Property Management</div>
+        <div class="card">📍 Location Insights</div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="steps">
+    <h2>How It Works</h2>
+    <ol>
+        <li>Register / Login</li>
+        <li>Add Property Details</li>
+        <li>Predict Price</li>
+        <li>View Results</li>
+    </ol>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Start Your Prediction Journey Today</h2>
+
+    
+   
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 PropPredict | Developed by Vishal</p>
+</footer>
+
+</body>
+</html>

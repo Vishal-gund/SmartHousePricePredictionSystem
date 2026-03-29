@@ -5,12 +5,20 @@
     font-family: Arial, sans-serif;
 }
 
+
+/* Full background image */
 body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    /* IMAGE + DARK OVERLAY */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('/images/loginImage.jpg') center/cover no-repeat;
+
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f4f6f8;
 }
 
 .login-container {

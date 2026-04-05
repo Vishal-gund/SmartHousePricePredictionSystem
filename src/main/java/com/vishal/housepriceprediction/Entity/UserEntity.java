@@ -1,4 +1,4 @@
-package com.vishal.housepriceprediction.UserEntity;
+package com.vishal.housepriceprediction.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

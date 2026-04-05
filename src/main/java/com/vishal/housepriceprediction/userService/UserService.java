@@ -5,7 +5,7 @@ package com.vishal.housepriceprediction.userService;
 
 import java.util.Optional;
 
-import com.vishal.housepriceprediction.UserEntity.UserEntity;
+import com.vishal.housepriceprediction.Entity.UserEntity;
 
 public interface UserService {
 	public UserEntity addUSerData(UserEntity user);

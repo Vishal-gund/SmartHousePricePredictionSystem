@@ -1,60 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Dashboard</title>
-    <link rel="stylesheet" href="navbar.css">
+	<title>Dashboard</title>
+	<link rel="stylesheet" th:href="@{/dashBord.css}">
+	
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="logo">Property Dashboard</div>
+	<!-- Navbar -->
+	<div class="heading-main">
+		<h1 class="heading">Property Dashboard</h1>
+	</div>
+		
+	
+	<div class="container">
 
-        <ul class="nav-links">
-            <li><a href="#">Dashboard</a></li>
+		<div class="form-box">
 
-            <li class="dropdown">
-                <a href="#">State ▼</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Add State</a></li>
-                    <li><a href="#">View State</a></li>
-                    <li><a href="#">Delete State</a></li>
-                </ul>
-            </li>
+			<h3>Add Property</h3>
 
-            <li class="dropdown">
-                <a href="#">City ▼</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Add City</a></li>
-                    <li><a href="#">Update City</a></li>
-                    <li><a href="#">Delete City</a></li>
-                    <li><a href="#">View Cities</a></li>
-                </ul>
-            </li>
+			<!-- SUCCESS / ERROR -->
+			<p th:if="${success}" th:text="${success}" style="color:green"></p>
+			<p th:if="${error}" th:text="${error}" style="color:red"></p>
 
-            <li class="dropdown">
-                <a href="#">Location ▼</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Add Location</a></li>
-                    <li><a href="#">Update Location</a></li>
-                    <li><a href="#">Delete Location</a></li>
-                    <li><a href="#">View Locations</a></li>
-                </ul>
-            </li>
+			<!-- FORM -->
+			<form th:action="@{/saveProperty}" method="post">
 
-            <li class="dropdown">
-                <a href="#">Property ▼</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Add Property</a></li>
-                    <li><a href="#">View Properties</a></li>
-                </ul>
-            </li>
+				<!-- STATE -->
+				<label>State</label>
+				<select id="stateDropdown" name="stateId">
+					<option value="">Select State</option>
+					
+					<option 
+						th:each="s : ${states}"
+						th:value ="${s.stateId}"
+						th:text="${s.stateName}">
+					</option>      <!-- here we accept the state id name  -->
 
-            <li><a href="#">Prediction</a></li>
-            <li><a href="#">Logout</a></li>
-        </ul>
-    </nav>
+				</select>
+
+				
+				<label>City</label>
+				<select id="cityDropdown" name="cityId">
+				    <option value="">Select City</option>
+				</select>
+
+				<!-- Location -->
+				<label>Location</label>
+				<select id="cityDropdown" name="cityId">
+					<option value="">Select Location</option>
+				</select>
+				
+				
+				<label>Area (Sq Ft)</label>
+				<select name="areaSqFt">
+				    <option value="">Select Area</option>
+				    <option value="500">0 - 500</option>
+				    <option value="1000">500 - 1000</option>
+				    <option value="1500">1000 - 1500</option>
+				    <option value="2000">1500 - 2000</option>
+				    <option value="3000">2000+</option>
+				</select>
+				
+				<label>Bedrooms</label>
+				<select name="bedrooms">
+				    <option value="">Select Bedrooms</option>
+				    <option value="1">1 BHK</option>
+				    <option value="2">2 BHK</option>
+				    <option value="3">3 BHK</option>
+				    <option value="4">4 BHK</option>
+				    <option value="5">5+ BHK</option>
+				</select>
+				
+				<label>Bathrooms</label>
+				<select name="bathrooms">
+				    <option value="">Select Bathrooms</option>
+				    <option value="1">1</option>
+				    <option value="2">2</option>
+				    <option value="3">3</option>
+				    <option value="4">4+</option>
+				</select>
+				
+				<label>House Age</label>
+				<select name="houseAge">
+				    <option value="">Select Age</option>
+				    <option value="1">0 - 1 Year</option>
+				    <option value="5">1 - 5 Years</option>
+				    <option value="10">5 - 10 Years</option>
+				    <option value="20">10 - 20 Years</option>
+				    <option value="30">20+ Years</option>
+				</select>
+				
+				
+				<!-- PROPERTY NAME -->
+				<label>Property Name</label>
+				<input type="text" name="propertyName" placeholder="Enter property name">
+
+
+				<button type="submit">Save</button>
+
+			</form>
+
+		</div>
+
+	</div>
+
+	<!-- AJAX SCRIPT -->
+	<script th:src="@{/js/dashBord.js}">
+		
+	</script>
 
 </body>
+
 </html>

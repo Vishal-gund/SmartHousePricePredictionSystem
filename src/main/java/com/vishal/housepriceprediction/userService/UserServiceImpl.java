@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.vishal.housepriceprediction.UserEntity.UserEntity;
+import com.vishal.housepriceprediction.Entity.UserEntity;
 import com.vishal.housepriceprediction.userRepository.UserEntityRepo;
 
 @Service
